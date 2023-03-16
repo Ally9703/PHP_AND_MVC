@@ -17,15 +17,18 @@
 
         <section class="container">
         
-            <h1>Bienvenue sur mon site MVC</h1>
-            <p>Voici la liste des utilisateurs :</p>
+            <h1>Les Avis clients</h1>
+            <p>Voici la liste des avis :</p>
 
             <?php
                 
-                while($users = $requete->fetch()) {
+                while($avis = $requete->fetch()) {
             
             ?>
-                <p><b><?= $users['first_name'] ?> <?= $users['last_name'] ?></b> : <?= $users['email'] ?></p>
+                <p>
+                    <b><?= $avis['note'] ?> / 5</b>
+                    <?= $avis['content'] ?>
+                </p>
             <?php
                 }
             ?>
