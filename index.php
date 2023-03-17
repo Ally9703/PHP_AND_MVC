@@ -1,11 +1,18 @@
 
-<!-- Traitement recuperation des donnéesw -->
 <?php
 
-    require('modeleUtilisateurs.php');
-    $requete = getUtilisateur();
-    // Affichage 
+    // ROUTEURS
 
-    require('viewsAccueil.php');
+    require('controller/controller.php');
 
+    if(isset($_GET['page'])){
+        
+        if($_GET['page']=='accueil'){
+            home();
 
+        }else if($_GET['page']=='avis'){
+            testimonials();
+        }
+    }else{
+        home();
+    }
